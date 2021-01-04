@@ -54,7 +54,8 @@ app.get('/about', (req,res) => {
 
     res.render('about',{
         title: 'About Us',
-        name: "Rohan Panicker"
+        name: "Rohan Panicker",
+        aboutText: "We created the Weather Application by using the services of weatherstack and mapbox."   
     })
 
 })
