@@ -43,8 +43,9 @@ weatherForm.addEventListener('submit', (e) =>{
     }
     else{
 
-        fetch('http://localhost:3000/weather?address='+location).then((response) => {
-
+        // fetch('http://localhost:3000/weather?address='+location).then((response) => {
+        // We change the above command to the one shown below so that it runs on Heroku and localhost
+        fetch('/weather?address='+location).then((response) => {
             response.json().then((data) => {
     
                 if( data.error ){

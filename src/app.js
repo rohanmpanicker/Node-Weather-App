@@ -11,6 +11,9 @@ console.log(path.join(__dirname,'../public'))
 
 const app = express()
 
+//Heroku provides this. We use the default value of 3000 to run on local.
+const port = process.env.PORT || 3000
+
 // Define path for Express config
 const publicDirectory = path.join(__dirname,'../public')
 const viewDirectory = path.join(__dirname, "../templates/views")
@@ -160,8 +163,8 @@ app.get('*',(req,res)=>{
 })
 
 
-app.listen(3000, () => {
-    console.log('Server is running on port 3000')
+app.listen(port, () => {
+    console.log('Server is running on port ' + port)
 })
 
 // Commented code
