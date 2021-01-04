@@ -1,0 +1,41 @@
+<!DOCTYPE html> 
+
+<html>
+
+<!-- The absolute\relative path for the CSS/JS file is taken from the app.use(express.static(publicDirectory)).
+We then we go down to the folder where the file is placed-->
+
+<head>
+    <title>Weather Application</title>
+    <link rel="icon" href="/img/weather.png">
+    <link rel="stylesheet" href="/css/styles.css">
+    
+</head>
+
+<body>
+
+    <div class="main-content">
+        {{>header}}
+        <p>Site provides weather information</p>
+
+        <form>
+            <input placeholder="Enter Location">
+            <button>Search</button>
+        </form>
+
+        <p id="statusText"></p>
+        <p id="messageText"></p>
+        <p id="placeText"></p>
+        <p id="weatherText"></p>
+        <p id="temperatureText"></p>
+        <p id="feelsLikeText"></p>
+
+    </div>
+
+    <script src="/js/app.js"></script>
+    
+    {{>footer}}
+</body>
+
+
+</html>
