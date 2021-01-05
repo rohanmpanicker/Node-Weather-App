@@ -20,9 +20,11 @@ const forecast = (longitude,latitude, callback) => {
         }else{
 
             callback(undefined,{
+                // weather_icon: response.body.current.weather_icons[0],
                 weather_descriptions: response.body.current.weather_descriptions[0],
                 temperature: response.body.current.temperature,
-                feelslike: response.body.current.feelslike
+                feelslike: response.body.current.feelslike,
+                humidity: response.body.current.humidity
             })
         }
     

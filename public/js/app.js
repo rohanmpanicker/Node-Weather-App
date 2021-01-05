@@ -17,7 +17,9 @@ const placeText = document.querySelector("#placeText")
 const weatherText = document.querySelector("#weatherText")
 const temperatureText = document.querySelector("#temperatureText")
 const feelsLikeText = document.querySelector("#feelsLikeText")
+const humidityText = document.querySelector("#humidityText")
 
+// const weatherIcon = document.querySelector("#weatherText").querySelector('#weatherIcon').getAttribute('src')
 // errorMessage.textContent = 'Error message to be displayed here'
 
 
@@ -40,6 +42,8 @@ weatherForm.addEventListener('submit', (e) =>{
         weatherText.textContent = ''
         temperatureText.textContent = ''
         feelsLikeText.textContent = ''
+        humidityText.textContent = ''
+        // weatherIcon = ''
     }
     else{
 
@@ -57,19 +61,25 @@ weatherForm.addEventListener('submit', (e) =>{
                     weatherText.textContent = ''
                     temperatureText.textContent = ''
                     feelsLikeText.textContent = ''
+                    humidityText.textContent = ''
+                    // weatherIcon = ''
 
                 }                
                 else{
-                    console.log(data.place)
-                    console.log(data.weather)
-                    console.log(data.temperature)
-                    console.log(data.feelsLike)
+                    console.log("Place: " + data.place)
+                    console.log("Weather: " + data.weather)
+                    console.log("Temperature: " + data.temperature)
+                    console.log("Feels Like: " + data.feelsLike)
+                    console.log("Humidity: " + data.humidity)
+                    // console.log(data.weather_icon)
                     statusText.textContent = ''
                     messageText.textContent = 'The weather information is : '
                     placeText.textContent = 'Place : ' + data.place
                     weatherText.textContent = 'Weather : ' + data.weather
                     temperatureText.textContent = 'Temperature : ' + data.temperature
-                    feelsLikeText.textContent = 'Feels Like : ' + data.feelsLike                    
+                    feelsLikeText.textContent = 'Feels Like : ' + data.feelsLike
+                    humidityText.textContent = 'Humidity : ' + data.feelsLike
+                    // weatherIcon = data.weather_icon                    
 
                 }
             })

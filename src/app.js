@@ -112,11 +112,15 @@ app.get('/weather', (req,res)=>{
                         console.log('Weather : ', forecastData.weather_descriptions)
                         console.log('Temperature : ', forecastData.temperature)
                         console.log('Feels Like : ', forecastData.feelslike)
+                        console.log('Humidity : ', forecastData.humidity)
+                        // console.log('Image Icon src : ',forecastData.weather_icon)
                         return res.send({
                             place: location,
                             weather: forecastData.weather_descriptions,
                             temperature: forecastData.temperature,
-                            feelsLike: forecastData.feelslike
+                            feelsLike: forecastData.feelslike,
+                            humidity: forecastData.humidity
+                            // weather_icon: forecastData.weather_icon
                         })
                     }
                 })
