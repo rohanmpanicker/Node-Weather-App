@@ -14,12 +14,11 @@ const locationElement = document.querySelector('input')
 const statusText = document.querySelector("#statusText")
 const messageText = document.querySelector("#messageText")
 const placeText = document.querySelector("#placeText") 
-const weatherText = document.querySelector("#weatherText")
+const weatherText = document.querySelector("#weatherInformation").querySelector("#weatherText")
 const temperatureText = document.querySelector("#temperatureText")
 const feelsLikeText = document.querySelector("#feelsLikeText")
 const humidityText = document.querySelector("#humidityText")
-
-// const weatherIcon = document.querySelector("#weatherText").querySelector('#weatherIcon').getAttribute('src')
+const weatherIcon = document.querySelector("#weatherInformation").querySelector('#weatherIcon')
 // errorMessage.textContent = 'Error message to be displayed here'
 
 
@@ -43,7 +42,8 @@ weatherForm.addEventListener('submit', (e) =>{
         temperatureText.textContent = ''
         feelsLikeText.textContent = ''
         humidityText.textContent = ''
-        // weatherIcon = ''
+        weatherIcon.setAttribute('src','')
+        weatherIcon.setAttribute('style','display: none;')
     }
     else{
 
@@ -62,7 +62,8 @@ weatherForm.addEventListener('submit', (e) =>{
                     temperatureText.textContent = ''
                     feelsLikeText.textContent = ''
                     humidityText.textContent = ''
-                    // weatherIcon = ''
+                    weatherIcon.setAttribute('src','')
+                    weatherIcon.setAttribute('style','display: none;')
 
                 }                
                 else{
@@ -71,7 +72,7 @@ weatherForm.addEventListener('submit', (e) =>{
                     console.log("Temperature: " + data.temperature)
                     console.log("Feels Like: " + data.feelsLike)
                     console.log("Humidity: " + data.humidity)
-                    // console.log(data.weather_icon)
+                    console.log(data.weather_icon)
                     statusText.textContent = ''
                     messageText.textContent = 'The weather information is : '
                     placeText.textContent = 'Place : ' + data.place
@@ -79,8 +80,8 @@ weatherForm.addEventListener('submit', (e) =>{
                     temperatureText.textContent = 'Temperature : ' + data.temperature
                     feelsLikeText.textContent = 'Feels Like : ' + data.feelsLike
                     humidityText.textContent = 'Humidity : ' + data.feelsLike
-                    // weatherIcon = data.weather_icon                    
-
+                    weatherIcon.setAttribute('src',data.weather_icon )
+                    weatherIcon.setAttribute('style','visible')
                 }
             })
         
