@@ -75,13 +75,14 @@ weatherForm.addEventListener('submit', (e) =>{
                     console.log(data.weather_icon)
 
                     const degreeTemperature = (data.temperature - 32) * (5/9)
+                    const degreeFeelsLike = (data.feelsLike - 32) * (5/9)
 
                     statusText.textContent = ''
                     messageText.textContent = 'The weather information is : '
                     placeText.textContent = 'Place : ' + data.place
                     weatherText.textContent = 'Weather : ' + data.weather
                     temperatureText.textContent = 'Temperature : ' + data.temperature+'°F/' + degreeTemperature.toFixed(2) + "°C"
-                    feelsLikeText.textContent = 'Feels Like : ' + data.feelsLike
+                    feelsLikeText.textContent = 'Feels Like : ' + data.feelsLike+'°F/' + degreeFeelsLike.toFixed(2) + "°C"
                     humidityText.textContent = 'Humidity : ' + data.feelsLike
                     weatherIcon.setAttribute('src',data.weather_icon )
                     weatherIcon.setAttribute('style','visible')
